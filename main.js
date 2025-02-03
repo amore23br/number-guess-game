@@ -1,4 +1,3 @@
-
 let comNum = 0;
 let playBtn = document.getElementById("play-btn");
 let userInput = document.getElementById("user-input");
@@ -16,7 +15,7 @@ resetBtn.addEventListener("click", reset);
 //> input focus 시 초기화 (다른데 안쓰일 경우 익명함수로 사용)
 userInput.addEventListener("focus", function () {
   userInput.value = "";
-})
+});
 
 //랜덤값 지정 (1<= random < 100)
 function pickRandomNum() {
@@ -24,7 +23,7 @@ function pickRandomNum() {
   console.log("정답", comNum);
 }
 
-//'Go'버튼 클릭시 이벤트 발생 
+//'Go'버튼 클릭시 이벤트 발생
 function play() {
   let userValue = userInput.value;
 
@@ -38,7 +37,7 @@ function play() {
     resultArea.textContent = "이미 입력한 값입니다";
     return;
   }
-  
+
   chance--; //기회 차감
   chanceArea.textContent = `남은 기회 : ${chance}`;
   //입력값에 따른 up&down
@@ -48,7 +47,7 @@ function play() {
     resultArea.textContent = "Down!";
   } else {
     resultArea.textContent = "That's right";
-    playBtn.disabled = true; 
+    playBtn.disabled = true;
   }
 
   //history에 입력한 값을 저장
@@ -68,7 +67,7 @@ function reset() {
   //input clear & random number reset
   userInput.value = "";
   pickRandomNum();
-  
+
   resultArea.textContent = "결과값을 입력해주세요";
 }
 
